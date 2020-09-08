@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<!--<div id="id01" class="modal">-->
+<!--		<form class="modal-content animate" action="/action_page.php" method="post">-->
+<!--    		<div class="container">-->
+<!--      			<label for="uname"><b>Username</b></label>-->
+<!--      			<input type="text" placeholder="Enter Username" name="uname" required><br><br>-->
+
+<!--      			<label for="psw"><b>Password</b></label>-->
+<!--      			<input type="password" placeholder="Enter Password" name="psw" required><br><br>-->
+
+<!--      			<button type="submit" style="background-color: #616161;">Login</button>-->
+<!--    		</div>-->
+
+<!--  		</form>-->
+<!--	</div>-->
+<form method="POST" action="/update/{{resident.id}}">
+	{% csrf_token %}
+	<label>House Number: </label>
+	<input type="text" name="rid" id="id_rid" required maxlength="20" value="{{ resident.rid }}"/>
+
+	<label>Resident Name: </label>
+	<input type="text" name="rname" id="id_rname" required maxlength="20" value="{{ resident.rname }}"/>
+
+	<label>Resident Email: </label>
+	<input type="text" name="remail" id="id_remail" required maxlength="20" value="{{ resident.remail }}"/>
+
+	<label>Password: </label>
+	<input type="text" name="rpassword" id="id_rpassword" required maxlength="20" value="{{ resident.rpassword }}"/>
+
+	<label>Resident Contact: </label>
+	<input type="text" name="rcontact" id="id_rcontact" required maxlength="20" value="{{ resident.rcontact }}"/>
+
+	<button type="submit">Update</button>
+</form>
+</body>
+</html>

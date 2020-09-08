@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+
+    <style>
+      body {font-family: Arial, Helvetica, sans-serif;}
+
+header{border-bottom:1px solid #000;}
+.main{width:1400px;height:200px;margin-left:auto;margin-right:auto;}
+.main p{font-size:26px;text-align:justify;}
+    </style>
+</head>
+<body>
+<header>
+    <center><h1>Water Bill Management</h1></center>
+</header>
+<div class="main">
+    <p>It is a Management System which record and display resident water bills of the society. It is very help to
+        evey resident to take a view of water bills just like electricity for ex. torront application for checking
+        how much units they consume in a month.</p>
+
+    <input type=button onClick="parent.location='login'" value='Log In'>
+    <input type="button" onclick="parent.location='signup'" value="Sign Up">
+
+    <table>
+        <thead>
+        <tr>
+            <th>House Number</th>
+            <th>Resident Name</th>
+            <th>Resident Email</th>
+            <th>Resident Password</th>
+            <th>Resident Contact</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for resident in residents %}
+        <tr>
+            <td>{{ resident.rid }}</td>
+            <td>{{ resident.rname }}</td>
+            <td>{{ resident.remail }}</td>
+            <td>{{ resident.rpassword }}</td>
+            <td>{{ resident.rcontact }}</td>
+            <td>
+                <a href="/edit/{{ resident.id }}">Edit</a>
+                <a href="/delete/{{ resident.id }}">Delete</a>
+            </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <center><a href="/res" style="background-color:#000;color:#fff;text-decoration:none">New Resident click here</a></center>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <style>
+
+    </style>
+</head>
+<body>
+	<form action="/res" method="POST">
+		{% csrf_token %}
+      		<label><b>House Number</b></label>
+<!--      		<input type="text" placeholder="Enter Username" name="uname" required><br><br>--> {{ form.rid }}
+
+      		<label><b>Resident Name</b></label>
+<!--      		<input type="password" placeholder="Enter Password" name="psw" required><br><br>--> {{ form.rname }}
+
+      		<label><b>Resident Email</b></label>
+<!--      		<input type="text" placeholder="Enter House No." name="uname" required><br><br>--> {{ form.remail }}
+
+
+			<label><b>Password</b></label>
+			{{ form.rpassword }}
+
+			<label><b>Resident Contact</b></label>
+			{{ form.rcontact }}
+
+      		<button type="submit">Login</button>
+    	</div>
+	</form>
+</body>
+</html>
